@@ -38,6 +38,7 @@
 		25ABA7FF2A3D1BA500549BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25ABA7AB2A3D1BA500549BE5 /* Assets.xcassets */; };
 		25ABA8002A3D1BA500549BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25ABA7AB2A3D1BA500549BE5 /* Assets.xcassets */; };
 		25ABA8012A3D1BA500549BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25ABA7AB2A3D1BA500549BE5 /* Assets.xcassets */; };
+		25ABA8162A3D1C2000549BE5 /* Kitten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ABA8152A3D1C2000549BE5 /* Kitten.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		25ABA7ED2A3D1BA500549BE5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		25ABA7F02A3D1BA500549BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25ABA7F22A3D1BA500549BE5 /* KittenDrop_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KittenDrop_macOS.entitlements; sourceTree = "<group>"; };
+		25ABA8152A3D1C2000549BE5 /* Kitten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitten.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				25ABA7A92A3D1BA200549BE5 /* GameScene.sks */,
 				25ABA7AA2A3D1BA200549BE5 /* GameScene.swift */,
 				25ABA7AB2A3D1BA500549BE5 /* Assets.xcassets */,
+				25ABA8152A3D1C2000549BE5 /* Kitten.swift */,
 			);
 			path = "KittenDrop Shared";
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			files = (
 				25ABA7FA2A3D1BA500549BE5 /* GameScene.swift in Sources */,
 				25ABA7B62A3D1BA500549BE5 /* GameViewController.swift in Sources */,
+				25ABA8162A3D1C2000549BE5 /* Kitten.swift in Sources */,
 				25ABA7B42A3D1BA500549BE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
