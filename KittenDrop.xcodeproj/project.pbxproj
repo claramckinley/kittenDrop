@@ -13,6 +13,7 @@
 		25C4FC632A38CE9300CE524E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C4FC612A38CE9300CE524E /* Main.storyboard */; };
 		25C4FC652A38CE9800CE524E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25C4FC642A38CE9800CE524E /* Assets.xcassets */; };
 		25C4FC682A38CE9800CE524E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C4FC662A38CE9800CE524E /* LaunchScreen.storyboard */; };
+		25C4FC702A38CEC700CE524E /* Kitten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4FC6F2A38CEC700CE524E /* Kitten.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		25C4FC642A38CE9800CE524E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25C4FC672A38CE9800CE524E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25C4FC692A38CE9800CE524E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25C4FC6F2A38CEC700CE524E /* Kitten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitten.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		25C4FC4F2A38CE9300CE524E = {
 			isa = PBXGroup;
 			children = (
+				25C4FC6F2A38CEC700CE524E /* Kitten.swift */,
 				25C4FC5A2A38CE9300CE524E /* KittenDrop */,
 				25C4FC592A38CE9300CE524E /* Products */,
 			);
@@ -140,6 +143,7 @@
 			files = (
 				25C4FC602A38CE9300CE524E /* ViewController.swift in Sources */,
 				25C4FC5C2A38CE9300CE524E /* AppDelegate.swift in Sources */,
+				25C4FC702A38CEC700CE524E /* Kitten.swift in Sources */,
 				25C4FC5E2A38CE9300CE524E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
