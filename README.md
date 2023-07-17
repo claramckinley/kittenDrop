@@ -1,2 +1,0 @@
-# kittenDrop
-app with bubba :)
