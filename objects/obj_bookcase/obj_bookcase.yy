@@ -6,7 +6,7 @@
     "name": "spr_bookcase",
     "path": "sprites/spr_bookcase/spr_bookcase.yy",
   },
-  "solid": false,
+  "solid": true,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,

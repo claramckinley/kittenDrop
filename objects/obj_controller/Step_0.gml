@@ -1,8 +1,8 @@
 
-var leftx = camera_get_view_x(view_camera[0]);
-var lefty = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
+var leftx = 0;
+var lefty =  camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
 
-var rightx = camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0]);
+var rightx = room_width;
 var righty = camera_get_view_y(view_camera[0]) + camera_get_view_height(view_camera[0]);
 
 var leftBookcase = instance_create_layer(leftx, lefty, "Instances", obj_bookcase);

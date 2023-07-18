@@ -20,8 +20,8 @@ function kittenMove() {
 	}
 
 	//horizontal collision
-	if(place_meeting (x+hsp, y, obj_bookcase)) || place_meeting (x+hsp, y, obj_obstacle) {
-		while (!place_meeting(x+sign(hsp), y, obj_bookcase) && !place_meeting (x+hsp, y, obj_obstacle)) {
+	if(place_meeting (x+hsp, y, obj_obstacle)) {
+		while (!place_meeting (x+hsp, y, obj_obstacle)) {
 			//x = x + sign(hsp);
 			if(!obj_obstacle.hasBeenHit) collision();
 		}
