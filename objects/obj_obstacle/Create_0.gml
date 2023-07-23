@@ -1,1 +1,0 @@
-hasBeenHit = false;
