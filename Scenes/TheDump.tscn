@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/TrashHeap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/wall.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/InteractArea.tscn" type="PackedScene" id=4]
+
+[node name="TheDump" type="YSort"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_left = -168.0
+margin_top = -232.0
+margin_right = 632.0
+margin_bottom = 440.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="TrashHeap" parent="." instance=ExtResource( 2 )]
+
+[node name="InteractArea" parent="TrashHeap" instance=ExtResource( 4 )]
+position = Vector2( -8, -32 )
+interactLabel = "trash_heap"
+interactType = "display_value"
+interactValue = "hey you found a secret smooch"
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 24 )
