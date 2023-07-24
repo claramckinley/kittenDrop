@@ -61,5 +61,6 @@ func execute_interaction():
 		match curInteraction.interactType:
 			"print_text" : print(curInteraction.interactValue)
 			"display_value" : interactLabel.text = curInteraction.interactValue
+			"next_scene" : get_tree().change_scene_to(load('res://Scenes/WorldFallLevel.tscn'))
 			
 

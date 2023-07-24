@@ -56,7 +56,7 @@ script = null
 
 [node name="InteractArea" parent="Heart" instance=ExtResource( 5 )]
 interactLabel = "heart"
-interactType = "display_value"
+interactType = "next_scene"
 interactValue = "this is a lil heart you can have if you want"
 
 [node name="Sign" parent="." instance=ExtResource( 6 )]
