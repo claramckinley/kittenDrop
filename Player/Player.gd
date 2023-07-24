@@ -6,7 +6,7 @@ var MAX_SPEED = 100
 
 var velocity = Vector2.ZERO
 
-onready var animatedSprite = $
+onready var animatedSprite = $AnimatedSprite
 
 
 func _physics_process(delta):
@@ -16,7 +16,6 @@ func _physics_process(delta):
 	inputVector = inputVector.normalized()
 	
 	if inputVector != Vector2.ZERO:
-		if()
 		velocity = velocity.move_toward(inputVector * MAX_SPEED, ACCELERATION * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
