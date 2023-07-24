@@ -28,6 +28,7 @@ _global_script_class_icons={
 
 config/name="kittenDrop"
 run/main_scene="res://Scenes/MainMap.tscn"
+config/icon="res://Player/icon.png"
 
 [display]
 
