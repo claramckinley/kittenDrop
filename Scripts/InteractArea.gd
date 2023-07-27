@@ -4,5 +4,6 @@ export var interactLabel = "none"
 export var interactType = "none"
 export var interactValue = "none"
 export var canGoToNextScene = false
+export var isDangerous = false
 export var numInteractions = 0
 

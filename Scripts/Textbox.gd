@@ -13,18 +13,18 @@ enum State {
 
 var current_state = State.READY
 var text_queue = []
+var prev_text = ""
+
+signal startPhase
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	#hide_textbox()
-	queue_text("welcome back to the world lil kitten")
-	
 func _process(delta):
 	match current_state:
 		State.READY:
 			if !text_queue.empty():
 				display_text()
+			else:
+				prev_text = ""
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
 				label.percent_visible = 1.0
@@ -34,6 +34,7 @@ func _process(delta):
 			if Input.is_action_just_pressed("ui_accept"):
 				change_state(State.READY)
 				hide_textbox();
+				emit_signal("startPhase")
 	
 func hide_textbox():
 	label.text = ""
@@ -45,7 +46,6 @@ func show_textbox():
 func display_text():
 	var next_text = text_queue.pop_front()
 	label.text = next_text
-	print(label.text)
 	label.percent_visible = 0.0
 	change_state(State.READING)
 	show_textbox()
@@ -53,7 +53,9 @@ func display_text():
 	$Tween.start()
 	
 func queue_text(next_text):
-	text_queue.push_back(next_text)
+	if !prev_text == next_text:
+		text_queue.push_back(next_text)
+		prev_text = next_text
 
 
 func _on_Tween_tween_all_completed():

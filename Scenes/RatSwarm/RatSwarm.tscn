@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://World/citygrey.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/RatSwarm/PlayerRatSwarm.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/RatSwarm/HealthUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/RatSwarm.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/RatSwarm/BossFight1Game.wav" type="AudioStream" id=5]
+
+[node name="RatSwarm" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BackgroundTextureRect" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 319.0
+margin_bottom = 182.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+
+[node name="BorderWall" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 104
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BorderWall"]
+polygon = PoolVector2Array( 1, 2, 1, 180, 320, 181, 319, 0, 1, -1, 0, -40, 357, -40, 361, 212, -31, 210, -31, -39, 0, -1, 0, -1 )
+
+[node name="PlayerRatSwarm" parent="." instance=ExtResource( 2 )]
+position = Vector2( 152, 80 )
+collision_layer = 8
+collision_mask = 1
+
+[node name="HealthUI" parent="." instance=ExtResource( 3 )]
+margin_right = 66.0
+margin_bottom = 20.0
+rect_rotation = 0.635008
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true

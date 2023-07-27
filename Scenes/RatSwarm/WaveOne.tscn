@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/RatSwarm/RatEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/WaveOne.gd" type="Script" id=2]
+
+[node name="WaveOne" type="Node2D"]
+script = ExtResource( 2 )
+numPhases = 2
+
+[node name="RatEnemy" parent="." instance=ExtResource( 1 )]
+home_state = 1
