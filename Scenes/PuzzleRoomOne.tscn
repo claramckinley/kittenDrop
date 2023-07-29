@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/wall.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/TheDump/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="TileSet" id=1]
+0/name = "wall.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( -32, -32, 128, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [  ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="PuzzleRoomTwo" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 8, 8 )
+cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -262109, 0, 0, -262108, 0, 0, -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -196588, 0, 0, -196587, 0, 0, -196586, 0, 0, -196585, 0, 0, -196584, 0, 0, -196583, 0, 0, -196582, 0, 0, -196581, 0, 0, -196579, 0, 0, -196578, 0, 0, -196577, 0, 0, -196576, 0, 0, -196575, 0, 0, -196574, 0, 0, -196573, 0, 0, -196572, 0, 0, -196571, 0, 0, -196570, 0, 0, -196569, 0, 0, -131032, 0, 0, -65496, 0, 0, 40, 0, 0, 131068, 0, 0, 65576, 0, 0, 196604, 0, 0, 131112, 0, 0, 262140, 0, 0, 196648, 0, 0, 327676, 0, 0, 262184, 0, 0, 393212, 0, 0, 327720, 0, 0, 458747, 0, 0, 458748, 0, 0, 524283, 0, 0, 589819, 0, 0, 589820, 0, 0, 655356, 0, 0, 851964, 0, 0, 917500, 0, 0, 983036, 0, 0, 917544, 0, 0, 1048571, 0, 0, 1048572, 0, 0, 983080, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1048616, 0, 0, 1179644, 0, 0, 1114152, 0, 0, 1245180, 0, 0, 1179688, 0, 0, 1310716, 0, 0, 1245224, 0, 0, 1376252, 0, 0, 1441788, 0, 0, 1507323, 0, 0, 1507324, 0, 0, 1507327, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0, 1441810, 0, 0, 1441811, 0, 0, 1441812, 0, 0, 1441813, 0, 0, 1441814, 0, 0, 1441815, 0, 0, 1441816, 0, 0, 1441817, 0, 0, 1441819, 0, 0, 1441820, 0, 0, 1441821, 0, 0, 1441822, 0, 0, 1441823, 0, 0, 1441824, 0, 0, 1441825, 0, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1572859, 0, 0, 1572863, 0, 0, 1507328, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507353, 0, 0, 1507354, 0, 0, 1507355, 0, 0, 1507356, 0, 0 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PoolVector2Array( 320, 72, 320, 8, 320, 0, 0, 0, 0, 176, 320, 176, 320, 112, 352, 112, 352, 208, -40, 208, -32, -24, 352, -24, 352, 72 )
+
+[node name="Portal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 320, 90 )
+next_scene_path = "res://Scenes/ShantyTown.tscn"
+player_spawn_location = Vector2( 32, 184 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, 88 )
+camera_bottom = 220
+camera_top = -10
+camera_left = -30
+camera_right = 336

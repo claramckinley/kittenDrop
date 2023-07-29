@@ -16,9 +16,11 @@ var text_queue = []
 var prev_text = ""
 
 signal startPhase
+signal finished
 
 
 func _process(delta):
+	
 	match current_state:
 		State.READY:
 			if !text_queue.empty():
@@ -35,6 +37,7 @@ func _process(delta):
 				change_state(State.READY)
 				hide_textbox();
 				emit_signal("startPhase")
+				emit_signal("finished")
 	
 func hide_textbox():
 	label.text = ""

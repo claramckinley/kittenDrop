@@ -8,12 +8,19 @@ var GRAVITY = 50
 var velocity = Vector2.ZERO
 var canWalk = false
 export var whichScene = 0
+export var camera_bottom = 180
+export var camera_top = 0
+export var camera_left = 0
+export var camera_right = 320
+export var camera_current = true
 var GLOBAL = Global
 
 enum Scene {
 	MAIN,
+	SHANTY,
 	SIDEHALL,
-	VERTHALL
+	VERTHALL,
+	PAUSED
 }
 
 onready var animationPlayer = $AnimationPlayer
@@ -24,6 +31,11 @@ onready var textBox = $Textbox
 onready var camera = $Camera2D
 
 func _ready():
+	camera.current = camera_current
+	camera.limit_bottom = camera_bottom
+	camera.limit_top = camera_top
+	camera.limit_right = camera_right
+	camera.limit_left = camera_left
 	self.global_position = GLOBAL.player_initial_map_position
 #	match Global.player_facing_direction:
 #		Global.dirFace.UP:
@@ -39,7 +51,6 @@ func _ready():
 func _physics_process(delta):
 	match whichScene:
 		Scene.MAIN:
-			camera.current = true
 			var inputVector = Vector2.ZERO
 			inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 			inputVector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -57,7 +68,6 @@ func _physics_process(delta):
 				animationState.travel("Idle")
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		Scene.SIDEHALL:
-			camera.current = false
 			var inputVector = Vector2.ZERO
 			inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 			inputVector.y = GRAVITY * delta
@@ -71,7 +81,6 @@ func _physics_process(delta):
 				animationState.travel("Idle")
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		Scene.VERTHALL:
-			camera.current = false
 			var inputVector = Vector2.ZERO
 			inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 			inputVector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -84,7 +93,10 @@ func _physics_process(delta):
 			else:
 				animationState.travel("Idle")
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	velocity = move_and_slide(velocity)
+		Scene.PAUSED:
+			animationState.travel("Idle")
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	velocity = move_and_slide(velocity, Vector2(0,0), false, 4, PI/4, false)
 	
 	#Interaction Methods
 	
@@ -108,15 +120,9 @@ func execute_interaction():
 			"print_text" : print(curInteraction.interactValue)
 			"display_value" : 
 				textBox.queue_text(curInteraction.interactValue)
-				if curInteraction.canGoToNextScene or curInteraction.numInteractions != 0 and Input.is_action_just_pressed("interact"):
+				if curInteraction.canGoToNextScene and curInteraction.numInteractions != 0 and Input.is_action_just_pressed("interact"):
 					curInteraction.interactType = "next_scene"
 					execute_interaction()
 				else:
 					curInteraction.numInteractions += 1
-			"next_scene" : get_tree().change_scene_to(load('res://Scenes/RatSwarm/RatSwarm.tscn'))
-
-
-
-func _on_Exit_area_entered(area):
-	print("leaving!")
-	#get_tree().change_scene_to(load('res://Scenes/RatSwarm/RatSwarm.tscn'))
+			#"next_scene" : get_tree().change_scene_to(load('res://Scenes/RatSwarm/RatSwarm.tscn'))

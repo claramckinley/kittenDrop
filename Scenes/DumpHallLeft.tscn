@@ -11,7 +11,8 @@ extents = Vector2( 177.5, 13 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 15, 145 )
-whichScene = 1
+whichScene = 2
+camera_current = false
 
 [node name="Path" type="StaticBody2D" parent="."]
 collision_mask = 9

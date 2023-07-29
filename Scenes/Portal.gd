@@ -12,13 +12,8 @@ func get_configuration_warning() -> String:
 	else:
 		return ""
 
-func _on_Exit_body_entered(body):
-	if get_tree().change_scene(next_scene_path) == OK:
-		print("unavailable scene")
-		
-
-
 func _on_Portal_body_entered(body):
+	print(body)
 	Global.player_initial_map_position = player_spawn_location
 	Global.player_facing_direction = player_direction
 	if get_tree().change_scene(next_scene_path) != OK:
