@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/ArrowButton.gd" type="Script" id=1]
+[ext_resource path="res://Objects/arrow_button_up1.png" type="Texture" id=2]
+[ext_resource path="res://Objects/arrow_button_up2.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "up_arrow",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 4, 2 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4, 9 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 4, 12 )
+
+[node name="ArrowButton" type="AnimatedSprite"]
+frames = SubResource( 3 )
+animation = "up_arrow"
+script = ExtResource( 1 )
+
+[node name="PerfectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerfectArea"]
+shape = SubResource( 4 )
+
+[node name="GoodArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
+shape = SubResource( 5 )
+
+[node name="OkayArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OkayArea"]
+shape = SubResource( 6 )
+
+[node name="PushTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="PerfectArea" to="." method="_on_PerfectArea_area_entered"]
+[connection signal="area_exited" from="PerfectArea" to="." method="_on_PerfectArea_area_exited"]
+[connection signal="area_entered" from="GoodArea" to="." method="_on_GoodArea_area_entered"]
+[connection signal="area_exited" from="GoodArea" to="." method="_on_GoodArea_area_exited"]
+[connection signal="area_entered" from="OkayArea" to="." method="_on_OkayArea_area_entered"]
+[connection signal="area_exited" from="OkayArea" to="." method="_on_OkayArea_area_exited"]
+[connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]

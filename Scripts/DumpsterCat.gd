@@ -34,7 +34,6 @@ enum Part{
 export var part = 0
 
 func set_move(value):
-	print(move)
 	move = value
 	if move:
 		leg = Leg.LEGONE
@@ -150,39 +149,43 @@ func part_c(delta):
 		Leg.NONE:
 			pass
 		Leg.LEGONE:
-			position.x += ACCELERATION * delta
-			if position.x >= 90:
-				leg = Leg.LEGTWO
-		Leg.LEGTWO:
 			position.y -= ACCELERATION * delta
 			if position.y <= 18:
+				leg = Leg.LEGTWO
+		Leg.LEGTWO:
+			position.x += ACCELERATION * delta
+			if position.x >= 89:
 				leg = Leg.LEGTHREE
 		Leg.LEGTHREE:
 			position.x += ACCELERATION * delta
-			if position.x >= 146:
+			if position.x >= 270:
 				leg = Leg.LEGFOUR
 		Leg.LEGFOUR:
 			position.y += ACCELERATION * delta
-			if position.y >= 165:
+			if position.y >= 166:
 				leg = Leg.LEGFIVE
 		Leg.LEGFIVE:
-			position.x += ACCELERATION * delta
-			if position.x >= 200:
+			position.x -= ACCELERATION * delta
+			if position.x <= 160:
 				leg = Leg.LEGSIX
 		Leg.LEGSIX:
 			position.y -= ACCELERATION * delta
-			if position.y <= 66:
+			if position.y <= 65:
 				leg = Leg.LEGSEVEN
 		Leg.LEGSEVEN:
 			position.x += ACCELERATION * delta
-			if position.x >= 257:
+			if position.x >= 215:
 				leg = Leg.LEGEIGHT
 		Leg.LEGEIGHT:
 			position.y += ACCELERATION * delta
-			if position.y >= 166:
+			if position.y >= 119:
 				leg = Leg.LEGNINE
 		Leg.LEGNINE:
 			position.x += ACCELERATION * delta
-			if position.x >= 300:
+			if position.x >= 258:
+				leg = Leg.LEGTEN
+		Leg.LEGTEN:
+			position.x += ACCELERATION * delta
+			if position.x >= 312:
 				leg = Leg.DONE
 				emit_signal("doneWalking")

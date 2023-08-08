@@ -14,7 +14,7 @@ signal wasHit
 
 func _ready():
 	playerStats.connect("no_health", self, "death_options")
-	textBox.queue_text("welcome to the rat swarm...")
+	textBox.queue_text("welcome to the rat swarm...", false)
 
 func _physics_process(delta):
 	var inputVector = Vector2.ZERO

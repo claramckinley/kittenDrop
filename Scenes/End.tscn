@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/End.gd" type="Script" id=1]
+
+[node name="End" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="GradeNumber" type="Label" parent="."]
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 38.0
+
+[node name="ScoreNumber" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 24.0
+margin_right = 80.0
+margin_bottom = 38.0
+
+[node name="ComboNumber" type="Label" parent="."]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 120.0
+margin_bottom = 38.0
+
+[node name="PerfectNumber" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 16.0
+margin_right = 176.0
+margin_bottom = 30.0
+
+[node name="GoodNumber" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 24.0
+margin_right = 224.0
+margin_bottom = 38.0
+
+[node name="OkayNumber" type="Label" parent="."]
+margin_left = 224.0
+margin_top = 16.0
+margin_right = 264.0
+margin_bottom = 30.0
+
+[node name="MissedNumber" type="Label" parent="."]
+margin_left = 272.0
+margin_top = 16.0
+margin_right = 312.0
+margin_bottom = 30.0
+
+[node name="GradeLabel" type="Label" parent="."]
+margin_right = 42.0
+margin_bottom = 14.0
+text = "Grade:"
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 40.0
+margin_right = 80.0
+margin_bottom = 14.0
+text = "Score:"
+
+[node name="ComboLabel" type="Label" parent="."]
+margin_left = 80.0
+margin_right = 129.0
+margin_bottom = 14.0
+text = "Combo:"
+
+[node name="PerfectLabel" type="Label" parent="."]
+margin_left = 136.0
+margin_right = 185.0
+margin_bottom = 14.0
+text = "Perfect:"
+
+[node name="GoodLabel" type="Label" parent="."]
+margin_left = 184.0
+margin_right = 224.0
+margin_bottom = 14.0
+text = "Good:"
+
+[node name="OkayLabel" type="Label" parent="."]
+margin_left = 224.0
+margin_right = 264.0
+margin_bottom = 14.0
+text = "Okay:"
+
+[node name="MissedLabel" type="Label" parent="."]
+margin_left = 264.0
+margin_right = 314.0
+margin_bottom = 14.0
+text = "Missed:"
+
+[node name="PlayAgain" type="Button" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 152.0
+margin_right = 88.0
+margin_bottom = 172.0
+text = "Play Again"
+
+[node name="BackToMenu" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 208.0
+margin_top = 152.0
+margin_right = 309.0
+margin_bottom = 172.0
+text = "Back To Menu"
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]

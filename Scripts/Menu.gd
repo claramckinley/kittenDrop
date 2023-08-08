@@ -7,7 +7,7 @@ func _ready():
 	startButton.grab_focus()
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scenes/TheDump/TheDump.tscn")
+	get_tree().change_scene("res://Scenes/ShantyTown.tscn")
 	
 
 

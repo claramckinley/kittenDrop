@@ -39,10 +39,10 @@ func start_next_phase():
 			print("good job")
 			
 func wave_one_textbox():
-	textBox.queue_text("well...how about this then...get 'em boys!")
+	textBox.queue_text("well...how about this then...get 'em boys!", false)
 	
 func wave_two_textbox():
-	textBox.queue_text("well well well i see we got a tough guy here ...no way you beat this!")
+	textBox.queue_text("well well well i see we got a tough guy here ...no way you beat this!", false)
 	
 func add_rat_wave_three():
 	waveThree.addRat = true

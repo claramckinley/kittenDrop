@@ -111,9 +111,10 @@ func check_order(check):
 		else:
 			currentCheck = 0
 			boobyd = true
-			textbox.queue_text("looks like you've been booby'd - get off my property!!")
+			textbox.queue_text("looks like you've been booby'd - get off my property!!", false)
 	if currentCheck == specificOrder.size():
-		textbox.queue_text("stop following me!")
+		currentCheck += 1
+		textbox.queue_text("stop following me!", false)
 		
 		
 		

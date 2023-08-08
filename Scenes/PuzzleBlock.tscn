@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/OrderCheck.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/OrderCheck.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Objects/TheDump/trashPile.png" type="Texture" id=3]
+[ext_resource path="res://items/trashPile.png" type="Texture" id=3]
 
 [node name="PuzzleBlock" type="Node2D"]
 
@@ -150,98 +149,64 @@ texture = ExtResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="obstacle12"]
 polygon = PoolVector2Array( -1, -11, -12, 8, 8, 8, 14, 8 )
 
-[node name="OrderCheck00" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck00" parent="." instance=ExtResource( 2 )]
 position = Vector2( 89, 18 )
-script = ExtResource( 1 )
 orderCheckNum = "00"
 
-[node name="OrderCheck01" type="Area2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 89, 65 )
-script = ExtResource( 1 )
+[node name="OrderCheck01" parent="." instance=ExtResource( 2 )]
 orderCheckNum = "01"
 
-[node name="OrderCheck02" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck02" parent="." instance=ExtResource( 2 )]
 position = Vector2( 90, 118 )
-script = ExtResource( 1 )
 orderCheckNum = "02"
 
-[node name="OrderCheck03" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck03" parent="." instance=ExtResource( 2 )]
 position = Vector2( 89, 165 )
-script = ExtResource( 1 )
 orderCheckNum = "03"
 
-[node name="OrderCheck10" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 146, 18 )
-script = ExtResource( 1 )
 
-[node name="OrderCheck11" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck11" parent="." instance=ExtResource( 2 )]
 position = Vector2( 146, 65 )
-script = ExtResource( 1 )
 orderCheckNum = "11"
 
-[node name="OrderCheck12" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck12" parent="." instance=ExtResource( 2 )]
 position = Vector2( 147, 118 )
-script = ExtResource( 1 )
 orderCheckNum = "12"
 
-[node name="OrderCheck13" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck13" parent="." instance=ExtResource( 2 )]
 position = Vector2( 146, 165 )
-script = ExtResource( 1 )
 orderCheckNum = "13"
 
-[node name="OrderCheck20" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck20" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, 19 )
-script = ExtResource( 1 )
 orderCheckNum = "20"
 
-[node name="OrderCheck21" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck21" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, 66 )
-script = ExtResource( 1 )
 orderCheckNum = "21"
 
-[node name="OrderCheck22" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck22" parent="." instance=ExtResource( 2 )]
 position = Vector2( 201, 119 )
-script = ExtResource( 1 )
 orderCheckNum = "22"
 
-[node name="OrderCheck23" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck23" parent="." instance=ExtResource( 2 )]
 position = Vector2( 200, 166 )
-script = ExtResource( 1 )
 orderCheckNum = "23"
 
-[node name="OrderCheck30" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck30" parent="." instance=ExtResource( 2 )]
 position = Vector2( 257, 19 )
-script = ExtResource( 1 )
 orderCheckNum = "30"
 
-[node name="OrderCheck31" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck31" parent="." instance=ExtResource( 2 )]
 position = Vector2( 257, 66 )
-script = ExtResource( 1 )
 orderCheckNum = "31"
 
-[node name="OrderCheck32" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck32" parent="." instance=ExtResource( 2 )]
 position = Vector2( 258, 119 )
-script = ExtResource( 1 )
 orderCheckNum = "32"
 
-[node name="OrderCheck33" type="Area2D" parent="." instance=ExtResource( 2 )]
+[node name="OrderCheck33" parent="." instance=ExtResource( 2 )]
 position = Vector2( 257, 166 )
-script = ExtResource( 1 )
 orderCheckNum = "33"
-
-[connection signal="body_entered" from="OrderCheck00" to="OrderCheck00" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck01" to="OrderCheck01" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck02" to="OrderCheck02" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck03" to="OrderCheck03" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck10" to="OrderCheck10" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck11" to="OrderCheck11" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck12" to="OrderCheck12" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck13" to="OrderCheck13" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck20" to="OrderCheck20" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck21" to="OrderCheck21" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck22" to="OrderCheck22" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck23" to="OrderCheck23" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck30" to="OrderCheck30" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck31" to="OrderCheck31" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck32" to="OrderCheck32" method="_on_OrderCheck_body_entered"]
-[connection signal="body_entered" from="OrderCheck33" to="OrderCheck33" method="_on_OrderCheck_body_entered"]

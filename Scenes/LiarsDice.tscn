@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/LiarsDice.gd" type="Script" id=1]
-[ext_resource path="res://Characters/PlayerHead.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LiarsDicePlayer.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/LiarsDiceChoices.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Textbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Pawspector Valley/Scenes/MiscScenes/Textbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -18,27 +17,43 @@ position = Vector2( 16, 16 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="LiarsDicePlayer"]
-texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LiarsDicePlayer"]
 shape = SubResource( 1 )
 
 [node name="LiarsDiceChoices" parent="." instance=ExtResource( 4 )]
-position = Vector2( 120, 48 )
+
+[node name="OpponentLabel" type="Label" parent="."]
+margin_left = 240.0
+margin_right = 319.0
+margin_bottom = 24.0
+text = "Opponent:"
+valign = 1
 
 [node name="OpponentHand" type="Label" parent="."]
-margin_top = 80.0
-margin_right = 64.0
-margin_bottom = 102.0
+margin_left = 240.0
+margin_top = 24.0
+margin_right = 304.0
+margin_bottom = 46.0
+
+[node name="PlayerLabel" type="Label" parent="."]
+margin_left = 264.0
+margin_top = 56.0
+margin_right = 307.0
+margin_bottom = 70.0
+text = "Player:"
 
 [node name="PlayerHand" type="Label" parent="."]
-margin_top = 48.0
-margin_right = 72.0
-margin_bottom = 67.0
+margin_left = 248.0
+margin_top = 72.0
+margin_right = 320.0
+margin_bottom = 91.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 272.0
+margin_top = 80.0
+margin_right = 312.0
+margin_bottom = 120.0
 
 [node name="Textbox" parent="." instance=ExtResource( 5 )]
 

@@ -103,7 +103,6 @@ func spin(angle):
 	move_and_slide(pos)
 
 func _on_HurtBox_area_entered(area):
-	print("hey")
 	queue_free()
 	hurtBox.create_hit_effect(area)
 	emit_signal("nextRat")

@@ -1,0 +1,149 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Pawspector Valley/Scenes/MiscScenes/Portal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pawspector Valley/SceneArt/PawspectorMockUp.png" type="Texture" id=2]
+[ext_resource path="res://Pawspector Valley/Scenes/CharacterScenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pawspector Valley/Scenes/MiscScenes/InteractArea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/VillagerSprite.png" type="Texture" id=5]
+[ext_resource path="res://Pawspector Valley/SceneArt/PawspectorShop.png" type="Texture" id=6]
+[ext_resource path="res://Pawspector Valley/SceneArt/PawspectorDouble.png" type="Texture" id=7]
+[ext_resource path="res://Pawspector Valley/SceneArt/ShantyTownDoubleHouse.png" type="Texture" id=8]
+[ext_resource path="res://Pawspector Valley/SceneArt/PawspectorSingle.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20.25, 3.75 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 30.5, 4 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 28, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.25, 2.25 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.0
+height = 2.0
+
+[node name="PawspectorValleyTown" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_right = 379.0
+margin_bottom = 200.0
+texture = ExtResource( 2 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="HouseFour" type="StaticBody2D" parent="YSort"]
+position = Vector2( 171, 23 )
+
+[node name="Sprite" type="Sprite" parent="YSort/HouseFour"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/HouseFour"]
+position = Vector2( 2, 12 )
+shape = SubResource( 2 )
+
+[node name="InteractAreaA" parent="YSort/HouseFour" instance=ExtResource( 4 )]
+position = Vector2( 10, 15 )
+interactLabel = "house_one_a"
+interactType = "open_door"
+interactValue = [ "res://Pawspector Valley/Scenes/Rooms/NorthernHouse.tscn", 160, 192 ]
+
+[node name="HouseThree" type="StaticBody2D" parent="YSort"]
+position = Vector2( 240, 153 )
+
+[node name="Sprite" type="Sprite" parent="YSort/HouseThree"]
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/HouseThree"]
+position = Vector2( 0, 9 )
+shape = SubResource( 4 )
+
+[node name="InteractAreaA" parent="YSort/HouseThree" instance=ExtResource( 4 )]
+position = Vector2( 0, 12 )
+interactLabel = "house_one_a"
+interactType = "open_door"
+interactValue = [ "res://Pawspector Valley/Scenes/Rooms/SouthernHouse.tscn", 160, 192 ]
+
+[node name="HouseTwo" type="StaticBody2D" parent="YSort"]
+position = Vector2( 84, 58 )
+
+[node name="Sprite" type="Sprite" parent="YSort/HouseTwo"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 7 )
+
+[node name="InteractAreaA" parent="YSort/HouseTwo" instance=ExtResource( 4 )]
+position = Vector2( 17, 16 )
+interactLabel = "house_one_a"
+interactType = "open_door"
+interactValue = [ "res://Pawspector Valley/Scenes/Rooms/TallWesternHouse.tscn", 160, 192 ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/HouseTwo"]
+position = Vector2( -1, 10 )
+shape = SubResource( 5 )
+
+[node name="InteractAreaB" parent="YSort/HouseTwo" instance=ExtResource( 4 )]
+position = Vector2( -16, 15 )
+interactLabel = "house_one_a"
+interactType = "open_door"
+interactValue = [ "res://Pawspector Valley/Scenes/Rooms/ShortWesternHouse.tscn", 160, 192 ]
+
+[node name="HouseOne" type="StaticBody2D" parent="YSort"]
+position = Vector2( 249, 79 )
+
+[node name="Sprite" type="Sprite" parent="YSort/HouseOne"]
+position = Vector2( -1, -9 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/HouseOne"]
+position = Vector2( -33, 3 )
+shape = SubResource( 2 )
+
+[node name="InteractAreaA" parent="YSort/HouseOne" instance=ExtResource( 4 )]
+position = Vector2( -25, 6 )
+interactLabel = "house_one_a"
+interactType = "open_door"
+interactValue = [ "res://Pawspector Valley/Scenes/Rooms/HouseOne.tscn", 160, 192 ]
+
+[node name="InteractAreaB" parent="YSort/HouseOne" instance=ExtResource( 4 )]
+position = Vector2( 31, 6 )
+interactLabel = "house_one_b"
+interactType = "open_door"
+interactValue = [ "res://Pawspector Valley/Scenes/Rooms/LeadersHouse.tscn", 160, 192 ]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/HouseOne"]
+position = Vector2( 31.75, 4.25 )
+shape = SubResource( 3 )
+
+[node name="Villager" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 130, 73 )
+
+[node name="Sprite" type="Sprite" parent="YSort/Villager"]
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Villager"]
+shape = SubResource( 1 )
+
+[node name="InteractArea" parent="YSort/Villager" instance=ExtResource( 4 )]
+interactLabel = "bean_cup_cat"
+interactType = "display_value"
+interactValue = [ "howdy pardner...", "interested in a game of bean cup?" ]
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 181, 45 )
+camera_bottom = 200
+camera_right = 380
+camera_zoom = 0.85
+
+[node name="PortalToPollutedRiverHall" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7, 88 )
+next_scene_path = "res://Pawspector Valley/Scenes/Rooms/PollutedRiverHall.tscn"
+player_spawn_location = Vector2( 317, 162 )
+
+[node name="PortalToTownFactoryHall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 386, 103 )
+next_scene_path = "res://Pawspector Valley/Scenes/Rooms/TownFactoryHall.tscn"
+player_spawn_location = Vector2( 0, 162 )

@@ -100,7 +100,6 @@ func start_walking():
 		demo = false
 	
 func turn_off_paused():
-	print("paused off")
 	player.whichScene = player.Scene.MAIN
 	player.camera.zoom.x = .5
 	player.camera.zoom.y = .5
@@ -111,11 +110,12 @@ func check_order(check):
 		if specificOrder[currentCheck] == check[0]:
 			currentCheck += 1
 		else:
-			textbox.queue_text("looks like you've been booby'd - get off my property")
+			textbox.queue_text("looks like you've been booby'd - get off my property", false)
 			currentCheck = 0
 			boobyd = true
 	if currentCheck == specificOrder.size():
-		textbox.queue_text("stop following me!")
+		currentCheck += 1
+		textbox.queue_text("stop following me!", false)
 		
 		
 		
